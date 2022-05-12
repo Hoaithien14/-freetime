@@ -1,0 +1,549 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+li {
+  list-style: none;
+  
+}
+a {
+  text-decoration: none;
+  color:#221F20;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+header {
+  display: flex;
+  justify-content:space-between;
+  padding: 12px 25px;
+  height: 80px;
+  align-items: center;
+  
+  
+
+}
+.logo {
+  flex:1.5;
+  cursor: pointer;
+ 
+}
+.menu {
+  flex:2.5;
+  display:flex;
+  cursor: pointer;
+}
+.menu > li {
+  padding: 0 8px;
+  
+}
+.menu > li a {
+  font-size: 12px;
+  font-weight: bold;
+  
+}
+
+.others {
+  flex:1;
+  display:flex;
+}
+.others > li {
+  padding: 0 10px;
+}
+.others >li:first-child {
+  position: relative;
+}
+.others >li:first-child input {
+  border-bottom: 1px solid #333;
+  width: 238px;
+  height: 40px;
+  background: #FFF;
+  border: 1px solid #E7E8E9;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 12px; 
+
+
+}
+.others > li:first-child i {
+  position: absolute;
+  right: 213px;
+  bottom: 12px;
+  color: #221F20;
+}
+.others > li:first-child input::placeholder{
+  margin-right: 60px;
+  padding: 40px;
+}
+.others >li >a {
+  margin-top: 10px;
+  font-size: 17px;
+}
+/* ==---------------adress-form----------------- */
+.adress-form {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0,0.7);
+  top: 0;
+  left: 0;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+  display:none;
+  z-index: 999;
+}
+.adress-form-content {
+  width: 400px;
+  height: 400px;
+  background-color:#fff;
+  border-radius: 7px;
+  
+}
+.adress-form-content form {
+  padding: 12px 40px;
+}
+.adress-form-content h2 {
+  font-size: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid #dddd;
+  position: relative;
+  font-weight: 600;
+  
+}
+.adress-form-content h2 span{
+  display:block;
+  position: absolute;
+  height: 30px;
+  padding: 0 6px;
+  border: 1px solid #ddd;
+  right:10px;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height:30px;
+  color:rgb(17, 17, 17);
+  border-radius:5px;
+}
+.adress-form-content form p{
+  font-size: 13px;
+}
+
+.adress-form-content form input,select{
+  height:40px;
+  display:block;
+  width:100%;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 6px;
+  border-radius:5px;
+
+}
+.adress-form-content form button {
+  margin-top: 24px;
+  height: 40px;
+  width: 80%;
+  cursor: pointer;
+  background-color:#D73831;
+  outline:none;
+  border:none;
+  color: #fff;
+  border-radius:5px;
+
+}
+/* ----------------- */
+
+/* hiện màu chỗ khuyến mãi sale 70% ----------------------------------------------------*/
+.menu >li:nth-child(4){
+  position: relative;
+
+}
+.menu >li:hover::before{
+  position: absolute;
+  content: "Sale 70%";
+  display: block;
+  height:15px;
+  line-height: 15px;
+  width:45px;
+  background-color:#d63a3a;
+  border-radius: 5px;
+  right: -3px;
+  top: -15px;
+  color: #fff;
+  font-size: 10px;
+  padding-left: 3px;
+  cursor: pointer;
+  font-family: "Helvetica Neue",;
+  text-align: center;
+  
+
+}
+#adress-form:hover::after{
+  position: absolute;
+  content:"";
+  background-color: #d63a3a;
+  height:6px;
+  width: 6px;
+  display:block;
+  top: -3px;
+  right: 30px;
+  transform:rotate(45deg);
+  
+
+}
+
+
+
+/* hiện màu chỗ giỏ hàng ----------------------------------------------------*/
+.others li:nth-child(4){
+  position: relative;
+  
+
+}
+.others li:nth-child(4)::before{
+  position: absolute;
+  content: "0";
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  display: block;
+  height:14px;
+  line-height: 14px;
+  width:15px;
+  background-color:#221F20;
+  border-radius: 5px;
+  right: -2px;
+  top: -5px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 11px;
+  
+
+}
+/* -------------------- submenu CÁCH 1 */
+/* .menu ul li {
+   position: relative;
+}
+.submenu {
+  position: absolute;
+  background-color: #fff;
+  width: 1000px;
+  height: auto;
+  z-index: 999;
+  margin: 0px -2px;
+  padding: 12px;
+  display:none;
+  border: 0.7px solid #ccc;
+
+
+
+/*  SUBMENU ----------------------------------------------*/
+
+
+.sub-menu > ul > li > a:hover,
+ li:hover > a{
+  color:#ea4636;
+  
+  
+}
+
+/* submenu về chúng tôi */
+li .sub-menu{
+  position: absolute;
+	z-index: 500;
+	background-color:#ffffff;
+	/* box-shadow: -2px 2px 70px -25px rgba(134, 132, 132, 0.3);  */
+	padding: 10px 30px;
+	transition: all 0.5s ease;
+	margin-top:30px;
+	opacity:0;
+	visibility: hidden;
+  border: 1px solid #E7E8E9;
+  
+ 
+  
+}
+li .single-column-menu{
+   /* min-width: 280px; */
+   width: 260px;
+}
+
+ li .sub-menu > ul > li{
+	line-height: 1;
+}
+ li .sub-menu > ul > li > a{
+	display: inline-block;
+	padding: 12px 0;
+	font-size: 14px;
+	transition: color 0.3s ease;
+	text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  color:#221F20;
+  z-index: 999;
+}
+  li.menu-item-has-children:hover .sub-menu{
+	margin-top: 10px;
+	visibility: visible;
+	opacity: 1;
+  }
+
+
+/* MEGAMENU--------------------------- */
+ li .sub-menu.mega-menu{ 
+  left: 50%;
+  transform: translateX(-50%);	
+  
+}
+ li .sub-menu.mega-menu-column-4{
+  max-width: 1290px;
+  width: 100%; 	
+  display: flex;
+  flex-wrap: wrap;
+  padding:20px 15px;
+}
+.sub-menu.mega-menu-column-4 > .list-item{
+  flex:0 0 20%;
+  padding:0 15px;
+}
+.sub-menu.mega-menu-column-4 > .list-item .title{
+  font-size: 14px;
+  color:#221F20;
+  font-weight: 600;
+  line-height:1;
+  padding: 10px 0;
+  font-family: 'Montserrat', sans-serif;  
+}
+
+li .sub-menu.mega-menu> .list-item > ul >li >a{
+  padding: 5px 0;
+  display: inline-block;
+  color: #57585A;
+  font-size: 14px;
+	transition: all 0.5s ease;
+  font-weight: 500;
+} 
+
+li .sub-menu.mega-menu> .list-item > ul >li >a:hover{
+  color: #d63a3a;
+	transition: all 0.5s ease;
+}
+/* NỮ -----------------------------------------------*/
+.sub-menu.mega-menu-column-7{
+  max-width: 1290px;
+  width: 100%; 	
+  display: flex;
+  flex-wrap: wrap;
+  padding:20px 15px;
+}
+.mega-menu-column-7 > .list-item{
+  flex:0 0 14%;
+  padding:0 15px;
+}
+.sub-menu.mega-menu-column-7 > .list-item .title{
+  font-size: 14px;
+  color:#221F20;
+  font-weight: 600;
+  line-height:1;
+  padding: 10px 0;
+  font-family: 'Montserrat', sans-serif;  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MENU -----------------------------------------------------------------------------*/
+#menu-top {
+  margin: 0 30px;
+  margin-bottom: 64px;
+  margin-left: 31px;
+}
+#menu-top li a{
+  float: left;
+  color: #fff;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.menu-top1 {
+  padding: 0px 105px;
+  background: #D73831;
+  
+}
+.menu-top2 {
+  padding: 0 105px;
+  background: #DC633A;
+}
+.menu-top3 {
+  padding: 0 100px;
+  background: #AC2F33;
+}
+
+
+
+/* slider */
+#Slider {
+  padding-bottom: 30px ;
+  /* border-bottom: 2px solid #000; */
+  cursor: pointer;
+  /* overflow: hidden; */
+}
+.aspect-ratio-169 {
+  display: block;
+  position: relative;
+  padding: 500px 0px;
+  /* ---------------------------- margin-bottom ---- */
+  transition:0.3s;
+  
+}
+
+/* chúng ta sử dụng aspect radion để responsive ảnh 
+https://viblo.asia/p/cach-su-dung-aspect-ratio-voi-css3-vyDZOpMxlwj */
+.aspect-ratio-169 img {
+  display: block;
+  position: absolute;
+  padding: 0px 38px;
+
+  height: 518px;
+  /* width: 100%; */
+  top: 0;
+  /* left: 0; */
+  /* margin: 0 34px; */
+  
+
+  border-top-left-radius:80px;
+   border-bottom-right-radius:40px;
+
+
+ 
+   /* margin:0 60px;  */
+   /* border-top-left-radius: 80px; */
+}
+
+.dot-container {
+  position: absolute;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+}
+.dot {
+  margin-top: -77%;
+  height: 13px;
+  width: 13px;
+  outline: none;
+  border-radius:50%;
+  margin-right: 14px;
+  cursor: pointer;
+
+  border: 1px solid #ccc;
+  border-radius: 50%;
+} 
+.dot:hover {
+  background-color: #fff;
+
+}
+.dot.active {
+  background-color: #fff;
+}
+.sale-active {
+  color: #ea4636;
+}
+
+/* nút trái phải */
+.slider-content-btn {
+  position: absolute;
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+}
+.slider-content-btn i{
+  color:rgb(161, 161, 161);
+  font-size: 50px;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  transform: translateY(-1280%);
+  margin: 0px 60px;
+  opacity: 0;
+
+}
+.slider-content-btn i:hover{
+  color:#fff;
+  /* color:red; */
+  opacity: 0.7;
+}
+
+/* .slider-container:hover i{
+  opacity: 1;
+ 
+} */
+/* ------slider js cách 2 thuần------------------------------------- slider js cách 2 thuần-----------------*/
+
+.aspect-ratio-169 a:nth-child(2) img{
+  transform: translateX(100%);
+}
+.aspect-ratio-169 a:nth-child(3) img{
+  transform: translateX(200%);
+}
+.aspect-ratio-169 a:nth-child(4) img{
+  transform: translateX(300%);
+}
+.aspect-ratio-169 a:nth-child(5) img{
+  transform: translateX(400%);
+}
+.aspect-ratio-169 a:nth-child(6) img{
+  transform: translateX(500%);
+}
+
+
+.slider-container {
+  position: relative;
+  overflow: hidden;
+}
+.slider-container:hover i {
+  opacity: 1;
+}
+.aspect-ratio-169 {
+  /* cách chuyển ảnh mượt */
+  transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
